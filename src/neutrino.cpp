@@ -2494,7 +2494,7 @@ void CNeutrinoApp::RealRun(CMenuWidget &mainMenu)
 			}
 		}
 
-		if( ( mode == mode_tv ) ||  ( mode == mode_radio )  || ( mode == mode_webtv ) ) {
+		if( ( mode == mode_tv ) || ( mode == mode_radio ) || ( mode == mode_webtv ) ) {
 			if( (msg == NeutrinoMessages::SHOW_EPG) /* || (msg == CRCInput::RC_info) */ ) {
 				InfoClock->enableInfoClock(false);
 				StopSubtitles();
@@ -2709,7 +2709,7 @@ void CNeutrinoApp::RealRun(CMenuWidget &mainMenu)
 						CMoviePlayerGui::getInstance().exec(NULL, "rtimeshift");
 				}
 			}
-			else if( msg == CRCInput::RC_stop) {
+			else if( msg == CRCInput::RC_stop ) {
 				StopSubtitles();
 				CRecordManager::getInstance()->exec(NULL, "Stop_record");
 				StartSubtitles();
@@ -3069,7 +3069,7 @@ int CNeutrinoApp::handleMsg(const neutrino_msg_t _msg, neutrino_msg_data_t data)
 
 	/* ================================== KEYS ================================================ */
 	if( msg == CRCInput::RC_ok || (!g_InfoViewer->virtual_zap_mode && (msg == CRCInput::RC_sat || msg == CRCInput::RC_favorites))) {
-		if( (mode == mode_tv) || (mode == mode_radio) || (mode == mode_ts) || (mode == mode_webtv)) {
+		if((mode == mode_tv) || (mode == mode_radio) || (mode == mode_ts) || (mode == mode_webtv)) {
 			showChannelList(msg);
 			return messages_return::handled;
 		}
@@ -3211,11 +3211,11 @@ int CNeutrinoApp::handleMsg(const neutrino_msg_t _msg, neutrino_msg_data_t data)
 		g_videoSettings->nextMode();
 		return messages_return::handled;
 	}
-	else if(( msg == (neutrino_msg_t) g_settings.key_next43mode ) && g_settings.key_pic_size_active ) {
+	else if(( msg == (neutrino_msg_t) g_settings.key_next43mode) && g_settings.key_pic_size_active) {
 		g_videoSettings->next43Mode();
 		return messages_return::handled;
 	}
-	else if(( msg == (neutrino_msg_t) g_settings.key_switchformat) && g_settings.key_pic_mode_active ) {
+	else if(( msg == (neutrino_msg_t) g_settings.key_switchformat) && g_settings.key_pic_mode_active) {
 		g_videoSettings->SwitchFormat();
 		return messages_return::handled;
 	}
@@ -3960,7 +3960,7 @@ void CNeutrinoApp::scartMode( bool bOnOff )
 		if( lastMode == mode_radio ) {
 			radioMode( false );
 		}
-		else if( lastMode == mode_tv || lastMode == mode_webtv) {
+		else if( lastMode == mode_tv || lastMode == mode_webtv ) {
 			tvMode( false );
 		}
 		else if( lastMode == mode_standby ) {
