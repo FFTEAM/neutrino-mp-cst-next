@@ -1280,7 +1280,7 @@ void CMovieBrowser::refreshMovieInfo(void)
 	framebuffer->blit();
 }
 
-void CMovieBrowser::info_hdd_level(bool paint_hdd)
+void CMovieBrowser::info_hdd_level(bool /* paint_hdd */)
 {
 	if (show_mode == MB_SHOW_YT)
 		return;
